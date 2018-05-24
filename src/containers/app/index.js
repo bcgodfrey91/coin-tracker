@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Link } from 'react-router-dom'
+import Home from '../home'
+import About from '../about'
 
 class App extends Component {
   state = {
@@ -21,14 +22,21 @@ class App extends Component {
 
     return body;
   };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+      <div>
+        <header>
+          <Link to="/">Home</Link>
+          <Link to="/about-us">About</Link>
         </header>
-        <p className="App-intro">{this.state.response}</p>
+
+        <main>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about-us" component={About} />
+        </main>
+
+        <div>{this.state.response}</div>
       </div>
     );
   }
