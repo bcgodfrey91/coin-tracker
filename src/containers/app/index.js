@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom'
-import Home from '../home'
-import About from '../about'
+import { Route, Link } from 'react-router-dom';
+import Home from '../Home';
+import About from '../About';
+import './App.css';
 
 class App extends Component {
   state = {
@@ -39,7 +40,7 @@ class App extends Component {
         <div>{this.state.response}</div>
       </div>
     );
-  }
-}
+  };
+};
 
 export default App;
